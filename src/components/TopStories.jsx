@@ -40,9 +40,7 @@ const TopStories = (props) => {
       Axios.get(
         `http://api.openweathermap.org/geo/1.0/reverse?lat=${
           geoTag.latitude
-        }&lon=${geoTag.longitude}&limit=1&appid=${
-          import.meta.env.VITE_WEATHER_KEY
-        }`
+        }&lon=${geoTag.longitude}&limit=1&appid=951ae4d28175a0f119122e34d7af3d6a`
       )
         .then((response) => {
           props.setCountry(response.data[0].country);
@@ -55,9 +53,7 @@ const TopStories = (props) => {
   useEffect(() => {
     if (props.country) {
       Axios.get(
-        `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${
-          import.meta.env.VITE_NEWS_KEY
-        }`
+        `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=a93f0701cbb842b7ba20fc080e3a2cc3`
       )
         .then((response) => {
           const articles = response.data.articles.map((article) => article);
