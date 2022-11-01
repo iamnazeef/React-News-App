@@ -12,7 +12,7 @@ const SearchResult = (props) => {
   useEffect(() => {
     if (news) {
       let temps = news.articles.map((news) => {
-        return <TopStoriesTemplate news={news} key={news.url} />;
+        return <TopStoriesTemplate news={news} key={news.link} />;
       });
       setNewsTemps(temps);
       props.setSearchInput("");
@@ -22,15 +22,17 @@ const SearchResult = (props) => {
   const date = new Date();
 
   //Fetching News
+
   useEffect(() => {
+    // console.log(props.searchInput);
     if (props.country) {
       Axios.get(
-        `https://newsapi.org/v2/everything?q=${`$ ${props.searchInput}`}&sortBy=popularity&apiKey=${
+        `https://newsdata.io/api/1/news?apikey=${
           import.meta.env.VITE_NEWS_KEY
-        }`
+        }&q=${props.searchInput}` //restricted to one keyword search
       )
         .then((response) => {
-          const articles = response.data.articles.map((article) => article);
+          const articles = response.data.results.map((article) => article);
           setNews((prev) => ({
             ...prev,
             articles,

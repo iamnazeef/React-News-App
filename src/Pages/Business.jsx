@@ -11,7 +11,7 @@ const Business = (props) => {
   useEffect(() => {
     if (news) {
       let temps = news.articles.map((news) => {
-        return <TopStoriesTemplate news={news} key={news.url} />;
+        return <TopStoriesTemplate news={news} key={news.link} />;
       });
       setNewsTemps(temps);
     }
@@ -21,12 +21,12 @@ const Business = (props) => {
   useEffect(() => {
     if (props.country) {
       Axios.get(
-        `https://newsapi.org/v2/top-headlines?country=${
-          props.country
-        }&category=business&apiKey=${import.meta.env.VITE_NEWS_KEY}`
+        `https://newsdata.io/api/1/news?apikey=${
+          import.meta.env.VITE_NEWS_KEY
+        }&country=${props.country}&category=business`
       )
         .then((response) => {
-          const articles = response.data.articles.map((article) => article);
+          const articles = response.data.results.map((article) => article);
           setNews((prev) => ({
             ...prev,
             articles,

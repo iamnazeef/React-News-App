@@ -1,6 +1,6 @@
 const TopStoriesTemplate = (props) => {
   // Published Time Calculation.
-  const publishedHour = props.news.publishedAt.slice(11, 13);
+  const publishedHour = props.news.pubDate.slice(11, 13);
   const publishedHourIn12 = publishedHour % 12 ? publishedHour % 12 : 12;
   const currentHour = new Date().getHours();
   const currentHourIn12 = currentHour % 12 ? currentHour % 12 : 12;
@@ -14,10 +14,10 @@ const TopStoriesTemplate = (props) => {
   return (
     <div className="bg-lightGray text-gray-200 px-5 pb-5 w-full">
       <div className="img">
-        <a href={props.news.url}>
-          {props.news.urlToImage && (
+        <a href={props.news.link}>
+          {props.news.image_url && (
             <img
-              src={props.news.urlToImage}
+              src={props.news.image_url}
               alt=""
               className="w-full max-h-[200px] rounded-xl"
               loading="lazy"
@@ -27,11 +27,11 @@ const TopStoriesTemplate = (props) => {
       </div>
       <div className="info p-1">
         <div className="source mt-2">
-          <p className="text-xs">{props.news.source.name}</p>
+          <p className="text-xs">{props.news.source_id}</p>
         </div>
         <div className="headline mt-1 mb-3">
           <p className="text-xl">
-            <a href={props.news.url} className="hover:underline">
+            <a href={props.news.link} className="hover:underline">
               {props.news.title}
             </a>
           </p>
