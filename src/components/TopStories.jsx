@@ -15,7 +15,8 @@ const TopStories = (props) => {
   useEffect(() => {
     if (news) {
       let temps = news.articles.map((news) => {
-        return <TopStoriesTemplate news={news} key={news.url} />;
+        // console.log(news);
+        return <TopStoriesTemplate news={news} key={news.link} />;
       });
       setNewsTemps(temps);
     }
@@ -38,9 +39,11 @@ const TopStories = (props) => {
   useEffect(() => {
     if (geoTag.latitude && geoTag.longitude) {
       Axios.get(
-        `https://api.openweathermap.org/geo/1.0/reverse?lat=${
+        `http://api.openweathermap.org/geo/1.0/reverse?lat=${
           geoTag.latitude
-        }&lon=${geoTag.longitude}&limit=1&appid=951ae4d28175a0f119122e34d7af3d6a`
+        }&lon=${geoTag.longitude}&limit=1&appid=${
+          import.meta.env.VITE_WEATHER_KE
+        }`
       )
         .then((response) => {
           props.setCountry(response.data[0].country);
@@ -53,10 +56,13 @@ const TopStories = (props) => {
   useEffect(() => {
     if (props.country) {
       Axios.get(
-        `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=a93f0701cbb842b7ba20fc080e3a2cc3`
+        `https://newsdata.io/api/1/news?apikey=${
+          import.meta.env.VITE_NEWS_KEY
+        }&country=${props.country}&category=top`
       )
         .then((response) => {
-          const articles = response.data.articles.map((article) => article);
+          // console.log(response.data.results);
+          const articles = response.data.results.map((article) => article);
           setNews((prev) => ({
             ...prev,
             articles,
