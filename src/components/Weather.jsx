@@ -56,9 +56,7 @@ const Weather = () => {
       Axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${
           geoTag.latitude
-        }&lon=${geoTag.longitude}&units=metric&appid=${
-          import.meta.env.VITE_WEATHER_KEY
-        }`
+        }&lon=${geoTag.longitude}&units=metric&appid=951ae4d28175a0f119122e34d7af3d6a`
       ).then((response) => {
         setWeather((prev) => ({
           ...prev,
