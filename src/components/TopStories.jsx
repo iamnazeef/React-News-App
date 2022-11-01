@@ -39,7 +39,7 @@ const TopStories = (props) => {
   useEffect(() => {
     if (geoTag.latitude && geoTag.longitude) {
       Axios.get(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${
           geoTag.latitude
         }&lon=${geoTag.longitude}&limit=1&appid=${
           import.meta.env.VITE_WEATHER_KE
