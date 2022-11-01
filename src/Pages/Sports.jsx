@@ -21,9 +21,7 @@ const Business = (props) => {
   useEffect(() => {
     if (props.country) {
       Axios.get(
-        `https://newsdata.io/api/1/news?apikey=${
-          import.meta.env.VITE_NEWS_KEY
-        }&country=${props.country}&category=sports`
+        `https://newsdata.io/api/1/news?apikey=pub_129376965a51c291ca4273aa7684e0c0cdd17&country=${props.country}&category=sports`
       )
         .then((response) => {
           const articles = response.data.results.map((article) => article);

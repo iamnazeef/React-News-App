@@ -82,7 +82,7 @@ const Weather = () => {
             <div className="weatherCondition mr-[0.20rem]">
               {weather.condition && (
                 <img
-                  src={`http://openweathermap.org/img/wn/${weather.condition}@2x.png`}
+                  src={`https://openweathermap.org/img/wn/${weather.condition}@2x.png`}
                   alt=""
                   className="w-[70px]"
                 />
