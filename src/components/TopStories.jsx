@@ -38,7 +38,7 @@ const TopStories = (props) => {
   useEffect(() => {
     if (geoTag.latitude && geoTag.longitude) {
       Axios.get(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${
           geoTag.latitude
         }&lon=${geoTag.longitude}&limit=1&appid=951ae4d28175a0f119122e34d7af3d6a`
       )
