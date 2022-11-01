@@ -27,9 +27,7 @@ const SearchResult = (props) => {
     // console.log(props.searchInput);
     if (props.country) {
       Axios.get(
-        `https://newsdata.io/api/1/news?apikey=${
-          import.meta.env.VITE_NEWS_KEY
-        }&q=${props.searchInput}` //restricted to one keyword search
+        `https://newsdata.io/api/1/news?apikey=pub_129376965a51c291ca4273aa7684e0c0cdd17&q=${props.searchInput}` //restricted to one keyword search
       )
         .then((response) => {
           const articles = response.data.results.map((article) => article);
