@@ -1,4 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
+    
+    const handleClick = () => {
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 0);
+    };
+    
   return (
     <div className="text-gray-300 pb-28 relative px-5 pt-5 bg-mediumGray">
       <div>
@@ -12,7 +21,14 @@ const Footer = () => {
             Back to top
           </a>
         </p>
-        <p className="text-sm mt-1 w-fit">Report bug</p>
+        <Link to="reportbug">
+          <p
+            className="text-sm mt-1 w-fit hover:underline"
+            onClick={handleClick}
+          >
+            Report bug
+          </p>
+        </Link>
       </div>
       <div className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] mt-7">
         <p className="text-sm">&copy; 2022 The Morning Post</p>
