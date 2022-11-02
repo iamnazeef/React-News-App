@@ -13,6 +13,7 @@ import Technology from "./Pages/Technology";
 import Error from "./Pages/Error";
 import SearchResult from "./Pages/SearchResult";
 import { useState } from "react";
+import ReportBug from "./Pages/ReportBug";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -83,6 +84,7 @@ function App() {
               />
             }
           />
+          <Route path="reportbug" element={<ReportBug />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
