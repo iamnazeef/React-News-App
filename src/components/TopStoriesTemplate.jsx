@@ -19,7 +19,7 @@ const TopStoriesTemplate = (props) => {
             <img
               src={props.news.image_url}
               alt=""
-              className="w-full max-h-[200px] rounded-xl"
+              className="w-full max-h-[200px] rounded-xl sm:max-h-[250px] md:max-h-[280px] lgmd:max-h-[300px] mdlg:max-h-[320px] lg:max-h-[355px] xl:max-h-[420px]"
               loading="lazy"
             />
           )}

@@ -35,7 +35,7 @@ const Business = (props) => {
   }, [props.country]);
 
   return (
-    <div>
+    <div className="px-[0.6rem] sm:px-20 md:px-28 lgmd:px-[8rem] mdlg:px-[9.5rem] lg:px-[11.2rem] xl:px-[15.2rem] 1.5xl:px-[25rem]">
       <div className="px-6 py-4 text-blue-400 text-[1.7rem] font-medium">
         <p>Science</p>
       </div>
