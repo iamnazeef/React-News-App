@@ -9,7 +9,7 @@ const ReportBug = () => {
   };
 
   return (
-    <div className="px-6 py-4">
+    <div className="px-6 py-4 sm:px-[8.5rem] lgmd:px-[9.5rem] mdlg:px-[11rem] lg:px-[12.5rem] xl:px-[17rem] 1.5xl:px-[18rem]">
       <h2 className="text-gray-300 text-xl font-medium border-b-2 border-b-gray-300 w-fit">
         Report Bug
       </h2>

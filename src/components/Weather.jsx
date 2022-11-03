@@ -54,9 +54,7 @@ const Weather = () => {
   useEffect(() => {
     if (geoTag.latitude && geoTag.longitude) {
       Axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${
-          geoTag.latitude
-        }&lon=${geoTag.longitude}&units=metric&appid=951ae4d28175a0f119122e34d7af3d6a`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${geoTag.latitude}&lon=${geoTag.longitude}&units=metric&appid=951ae4d28175a0f119122e34d7af3d6a`
       ).then((response) => {
         setWeather((prev) => ({
           ...prev,
@@ -69,7 +67,7 @@ const Weather = () => {
   }, [geoTag.latitude, geoTag.longitude]);
 
   return (
-    <div className="font-Rubik bg-lightGray text-gray-200 mt-16">
+    <div className="font-Rubik bg-lightGray text-gray-200 mt-16 sm:px-8">
       <div className="w-full h-20 flex justify-around items-center flex-wrap relative">
         <div className={`text-start ${geoTag.latitude ? "pr-0" : "pr-0"}`}>
           <p className="text-[1.6rem] font-medium tracking-normal">

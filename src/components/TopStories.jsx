@@ -39,9 +39,7 @@ const TopStories = (props) => {
   useEffect(() => {
     if (geoTag.latitude && geoTag.longitude) {
       Axios.get(
-        `https://api.openweathermap.org/geo/1.0/reverse?lat=${
-          geoTag.latitude
-        }&lon=${geoTag.longitude}&limit=1&appid=951ae4d28175a0f119122e34d7af3d6a`
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${geoTag.latitude}&lon=${geoTag.longitude}&limit=1&appid=951ae4d28175a0f119122e34d7af3d6a`
       )
         .then((response) => {
           props.setCountry(response.data[0].country);
@@ -69,7 +67,7 @@ const TopStories = (props) => {
   }, [props.country]);
 
   return (
-    <div>
+    <div className="px-[0.6rem] sm:px-20 md:px-28 lgmd:px-[8rem] mdlg:px-[9.5rem] lg:px-[11.2rem] xl:px-[15.2rem] 1.5xl:px-[25rem]">
       <div
         className={`px-6 max-h-screen py-4 text-blue-400 text-[1.7rem] font-medium`}
       >
