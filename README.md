@@ -1,5 +1,5 @@
 # React-News-App
-A react news app which uses the newsdata.io api to fetch latest news.
+A news app created with the help of technologies such as ReactJS, TailwindCSS, the Newsdata.io API, and the OpenWeatherMap API. It has a search option built in for finding news sources and the website is also fully responsive.
 
 # How to run the app?
 ```
